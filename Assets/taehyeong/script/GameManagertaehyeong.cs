@@ -10,6 +10,7 @@ public class GameManagertaehyeong : MonoBehaviour
     public GameObject startButton;
     public Text scoretext;
     Transform player;
+    public GameObject canvas;
     public void Awake()
     {
         instance = this;
@@ -20,7 +21,7 @@ public class GameManagertaehyeong : MonoBehaviour
     }
     public void startgame()
     {
-        player.position = Vector2.zero;
+        player.transform.position = Vector2.zero;
         timescore = 0;
         isPlay = true;
         startButton.SetActive(false);
@@ -33,6 +34,11 @@ public class GameManagertaehyeong : MonoBehaviour
         {
             timescore += Time.deltaTime;
             scoretext.text =  Mathf.RoundToInt(timescore) .ToString();
+        }
+
+        if (isPlay)
+        {
+            canvas.SetActive(false);
         }
     }
 
