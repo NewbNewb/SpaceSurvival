@@ -6,6 +6,7 @@ TagManager:
   tags:
   - bullet
   - Monster
+  - Skill
   layers:
   - Default
   - TransparentFX

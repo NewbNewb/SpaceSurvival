@@ -12,7 +12,7 @@ public class gameManagerTaeseong : MonoBehaviour
     public GameObject Alien3;
     public GameObject Alien4;
     public GameObject Player;
-    public GameObject Bullet;
+    //public GameObject Bullet;
     public TMP_Text timeTxt;
     private float time;
     private bool isRunning = true;
@@ -32,7 +32,7 @@ public class gameManagerTaeseong : MonoBehaviour
     {
         // 총알과 몬스터 생성 코드(불러오는함수, 위치(?), 얼마마다 생성되는지 시간)
         InvokeRepeating("MakeAlien1", 0.0f, 2f);
-        InvokeRepeating("MakeBullet", 0.0f, 0.2f);
+        //InvokeRepeating("MakeBullet", 0.0f, 0.2f);
     }
 
     void Update()
@@ -127,13 +127,13 @@ public class gameManagerTaeseong : MonoBehaviour
     }
 
 
-    void MakeBullet()
-    {
-        // 플레이어로 부터 총알이 생성되게 하는 코드
-        float x = Player.transform.position.x;
-        float y = Player.transform.position.y;
-        Instantiate(Bullet, new Vector3(x, y, 0), Quaternion.identity);
-    }
+    //void MakeBullet()
+    //{
+    //    // 플레이어로 부터 총알이 생성되게 하는 코드
+    //    float x = Player.transform.position.x;
+    //    float y = Player.transform.position.y;
+    //    Instantiate(Bullet, new Vector3(x, y, 0), Quaternion.identity);
+    //}
 }
 
 

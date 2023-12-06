@@ -6,7 +6,8 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public float speed;
-    
+    [SerializeField] private SpriteRenderer characterRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,11 @@ public class Character : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
         transform.position += new Vector3(x, y) * Time.deltaTime * speed;
+
+        // 객체지향적이진 않지만 구현이 급하여 바로 썼습니다.
+        Vector2 Ien = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float z = Mathf.Atan2(Ien.y, Ien.x) * Mathf.Rad2Deg;
+        characterRenderer.flipX = Mathf.Abs(z) > 90f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

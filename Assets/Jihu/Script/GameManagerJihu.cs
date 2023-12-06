@@ -14,6 +14,8 @@ public class GameManagerJihu : MonoBehaviour
     private float time;
     private bool isRunning = true;
     public GameObject endPanel;
+    public AudioClip gameOver;
+    public AudioSource audioSource;
 
     public static GameManagerJihu I;
 
@@ -51,6 +53,7 @@ public class GameManagerJihu : MonoBehaviour
     // 게임오버 됐을 때 GameManagerJihu.I.gameOver() 호출
     public void GameOver()
     {
+        audioSource.PlayOneShot(gameOver);
         isRunning = false; // 시간 멈추기
         Time.timeScale = 0f;
         endPanel.SetActive(true);

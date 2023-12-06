@@ -45,5 +45,13 @@ public class Monster : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (collision.gameObject.tag == "Skill")
+        {
+            currentHits++; // 현재 맞은 횟수가 1씩증가
+            if (currentHits >= maxHits) // 현재 맞은 횟수가 최대 맞은 횟수가 되면 몬스터 파괴
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
